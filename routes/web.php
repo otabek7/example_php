@@ -2,6 +2,10 @@
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
+use League\CommonMark\Extension\FrontMatter\Data\LibYamlFrontMatterParser;
+use League\CommonMark\Extension\FrontMatter\Data\SymfonyYamlFrontMatterParser;
+use Symfony\Component\Yaml\Yaml;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +19,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $posts = Post::all();
+    $files = File::files(resource_path("posts"));
+    $posts = [];
+
+    foreach($files as $file){
+        $documents[] = YamlFrontMatter::parseFile($file);
+    }
+
+    // return view ('posts', ['posts'=> $post]);
+    // $document = YamlFrontMatter::parseFile(
+    //     resource_path('posts/my-fourth-post.html')
+    // );
 
 
-    return view('posts', [
-        'posts' => $posts
-    ]);
+    // ddd($document->matter('date'));
+
+    // $posts = Post::all();
+
+
+    // return view('posts', [
+    //     'posts' => $posts
+    // ]);
 });
 
 Route::get('posts/{post}', function ($slug) {
