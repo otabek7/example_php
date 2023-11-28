@@ -8,6 +8,6 @@
         <?= $post; ?>
     </article>
 
-    <a href="/">Go Back</a> //random comments
+    <a href="/">Go Back</a>
 
 </body>
