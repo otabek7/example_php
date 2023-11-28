@@ -5,7 +5,7 @@
 
 <body>
     <article>
-        <h1><a href="/post"></a>My First Post</h1>
+        <h1><a href="/posts/my-first-post"></a>My First Post</h1>
 
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec mi leo. Aliquam ullamcorper condimentum
@@ -15,7 +15,7 @@
     </article>
 
     <article>
-        <h1><a href="/post">My Second Post</h1>
+        <h1><a href="/posts/my-second-post">My Second Post</h1>
 
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec mi leo. Aliquam ullamcorper condimentum
@@ -25,7 +25,7 @@
     </article>
 
     <article>
-        <h1><a href="/post">My Third Post</h1>
+        <h1><a href="/posts/my-third-post">My Third Post</h1>
 
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec mi leo. Aliquam ullamcorper condimentum
