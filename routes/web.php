@@ -18,22 +18,25 @@ use Symfony\Component\Yaml\Yaml;
 |
 */
 
+
+
 Route::get('/', function () {
-    $files = File::files(resource_path("posts"));
-    $posts = [];
+    $posts = Post::all();
+    return view('posts', ['posts' => $posts]);
 
-    foreach($files as $file){
-        $document = YamlFrontMatter::parseFile($file);
 
-        $posts[] = new Post(
-            $document->title,
-            $document->excerpt,
-            $document->date,
-            $document->body(),
-            $document->slug
-        );
-    }
-    return view ('posts', ['posts'=> $posts]);
+    // $posts = array_map(function ($file) {
+    //     $document = YamlFrontMatter::parseFile($file);
+
+    //     return new Post(
+    //         $document->title,
+    //         $document->excerpt,
+    //         $document->date,
+    //         $document->body(),
+    //         $document->slug
+    //     );
+    // }, $files);
+
 });
 
 Route::get('posts/{post}', function ($slug) {
