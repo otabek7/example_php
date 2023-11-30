@@ -29,19 +29,11 @@ Route::get('/', function () {
             $document->title,
             $document->excerpt,
             $document->date,
-            $document->body()
+            $document->body(),
+            $document->slug
         );
     }
     return view ('posts', ['posts'=> $posts]);
-
-
-    // ddd($document->matter('date'));
-
-    // $posts = Post::all();
-
-
-    // return view('posts', [
-    //     'posts' => $posts
 });
 
 Route::get('posts/{post}', function ($slug) {
