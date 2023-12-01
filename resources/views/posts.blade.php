@@ -1,15 +1,6 @@
-@extends ('layout')
-
-
-@section('banner')
- <h1>My Blog</h1>
-@endsection
-
-
-@section ('content')
-
+<x-layout>
     @foreach ($posts as $post)
-    <article class="{{$loop-> even ? 'foobar' : '' }}">
+    <article>
         <h1>
             <a href="/posts/<?= $post->slug; ?>">
                 <!-- <?= $post->title ?> -->
@@ -23,4 +14,5 @@
     </article>
     @endforeach
 
-@endsection
+
+</x-layout>

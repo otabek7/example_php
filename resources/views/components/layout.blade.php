@@ -4,9 +4,11 @@
 <link rel="stylesheet" href="/app.css">
 
 <body>
-    <header>
+    <!-- <header>
         @yield('banner')
 
     </header>
-    @yield('content')
+    @yield('content') -->
+
+    {{$slot}}
 </body>
