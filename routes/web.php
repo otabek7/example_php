@@ -39,9 +39,9 @@ Route::get('/', function () {
 
 });
 
-Route::get('posts/{post}', function ($slug) {
-    $post = Post::find($slug);
+Route::get('posts/{post}', function ($id) {
+    $post = Post::find($id);
     return view('post', [
-        'post' => Post::find($slug)
+        'post' => Post::find($id)
     ]);
 });
