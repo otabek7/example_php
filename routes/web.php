@@ -41,3 +41,8 @@ Route::get('/json-test', function()
         'updated' => true,
     ]);
 });
+
+Route::get('/view-test', function () {
+    return view('test', ['name' => 'Taylor']);
+});
+
