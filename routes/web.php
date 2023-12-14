@@ -19,25 +19,9 @@ use Symfony\Component\Yaml\Yaml;
 |
 */
 
-
-
 Route::get('/', function () {
     $posts = Post::all();
     return view('posts', ['posts' => $posts]);
-
-
-    // $posts = array_map(function ($file) {
-    //     $document = YamlFrontMatter::parseFile($file);
-
-    //     return new Post(
-    //         $document->title,
-    //         $document->excerpt,
-    //         $document->date,
-    //         $document->body(),
-    //         $document->slug
-    //     );
-    // }, $files);
-
 });
 
 Route::get('posts/{post:slug}', function (Post $post) {
@@ -48,4 +32,12 @@ Route::get('posts/{post:slug}', function (Post $post) {
 
 Route::get('categories/{category:slug}', function (Category $category) {
     return view('posts', ['posts' => $category->posts]);
+});
+
+Route::get('/json-test', function()
+{
+    return response()->json([
+        'name' => 'Jone',
+        'updated' => true,
+    ]);
 });
