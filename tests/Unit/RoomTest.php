@@ -26,4 +26,10 @@ class RoomTest extends TestCase
         $room = new Room(["Jack"]);
         $this->assertContains("Peter", $room->add("Peter"));
     }
+
+    public function test_room_remove()
+    {
+        $room = new Room(["Jack", "Peter"]);
+        $this->assertCount(1, $room->remove("Peter"));
+    }
 }
